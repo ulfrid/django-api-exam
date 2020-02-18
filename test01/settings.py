@@ -25,7 +25,7 @@ SECRET_KEY = '+dfxlax8rlkd8c3_8h!(u843k67hn&1@hjbukzr!b0z4k#u#f4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*','localhost','localhost:8000','127.0.0.1','127.0.0.1:8000']
 
 
 # Application definition
@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+#    'corsheaders',
+    'account',
     'tweets',
 ]
 
@@ -44,6 +46,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+  #  'corsheaders.middleware.CorsMiddleware',
    # 'django.middleware.csrf.CsrfViewMiddleware',
    # 'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -119,3 +122,31 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+##Stop Warning about '/'
+APPEND_SLASH=False
+
+##CORS
+#CORS_ORIGIN_ALLOW_ALL=True
+#CORS_ALLOW_CREDENTIALS = True
+
+#CORS_ALLOW_METHODS = (
+#    'DELETE',
+#    'GET',
+#    'OPTIONS',
+#    'PATCH',
+#    'POST',
+#    'PUT',
+#)
+
+#CORS_ALLOW_HEADERS = (
+#    'accept',
+#    'accept-encoding',
+#   'authorization',
+#    'content-type',
+#    'dnt',
+#    'origin',
+#    'user-agent',
+#    'x-csrftoken',
+#    'x-requested-with',
+#)
